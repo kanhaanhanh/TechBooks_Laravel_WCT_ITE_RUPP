@@ -62,7 +62,7 @@ export default function UserForm() {
 
   return (
     <>
-      {user.id && <h1>Update User: {user.name}</h1>}
+      {user.id && <h1>Update User: {user.firstname}</h1>}
       {!user.id && <h1>New User</h1>}
       <div className="card animated fadeInDown">
         {loading && (
@@ -79,7 +79,8 @@ export default function UserForm() {
         }
         {!loading && (
           <form onSubmit={onSubmit}>
-            <input value={user.name} onChange={ev => setUser({...user, name: ev.target.value})} placeholder="Name"/>
+            <input value={user.firstname} onChange={ev => setUser({...user, firstname: ev.target.value})} placeholder="FirstName"/>
+            <input value={user.lastname} onChange={ev => setUser({...user, lastname: ev.target.value})} placeholder="LastName"/>
             <input value={user.email} onChange={ev => setUser({...user, email: ev.target.value})} placeholder="Email"/>
             <input type="password" onChange={ev => setUser({...user, password: ev.target.value})} placeholder="Password"/>
             <input type="password" onChange={ev => setUser({...user, password_confirmation: ev.target.value})} placeholder="Password Confirmation"/>

@@ -41,12 +41,13 @@ export default function Users() {
         <h1>Users</h1>
         <Link className="btn-add" to="/users/new">Add new</Link>
       </div>
-      <div className="card animated fadeInDown">
+      <div className="card animated fadeInDown w-100">
         <table>
           <thead>
           <tr>
             <th>ID</th>
-            <th>Name</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
             <th>Email</th>
             <th>Create Date</th>
             <th>Actions</th>
@@ -55,7 +56,7 @@ export default function Users() {
           {loading &&
             <tbody>
             <tr>
-              <td colSpan="5" class="text-center">
+              <td colSpan="6" class="text-center">
                 Loading...
               </td>
             </tr>
@@ -66,7 +67,8 @@ export default function Users() {
             {users.map(u => (
               <tr key={u.id}>
                 <td>{u.id}</td>
-                <td>{u.name}</td>
+                <td>{u.firstname}</td>
+                <td>{u.lastname}</td>
                 <td>{u.email}</td>
                 <td>{u.created_at}</td>
                 <td>
